@@ -1,0 +1,17 @@
+Package: readcsvs
+Title: Read and Combine Multiple CSV Files with DuckDB
+Version: 0.1.0
+Authors@R: 
+    person("Ray", "Tellis", role = c("aut", "cre"))
+Description: Provides a function to efficiently read and union multiple CSV files 
+    using DuckDB's parallel processing capabilities. Automatically tracks source files 
+    and normalizes column names.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    DBI,
+    duckdb
+Suggests:
+    testthat (>= 3.0.0)
