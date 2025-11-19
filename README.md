@@ -13,7 +13,7 @@ An R function that reads and combines multiple CSV files into a single data fram
 install.packages("devtools")
 
 # Install package from GitHub
-devtools::install_github("yourusername/readcsvs")
+devtools::install_github("RayTellis/readcsvs")
 ```
 
 ## Usage
