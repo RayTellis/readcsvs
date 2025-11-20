@@ -1,10 +1,10 @@
 # readcsvs
 
-An R function that reads and combines multiple CSV files into a single data frame using DuckDB's efficient parallel processing.
+A single function R package that reads and combines multiple CSV files into a single data frame using DuckDB's efficient parallel processing.
 
 ## Overview
 
-`readcsvs()` uses DuckDB to quickly read and union multiple CSV files matching a pattern, automatically adding a filename column to track the source of each row. It normalizes column names and handles various CSV formats.
+`readcsvs::read_csvs()` uses DuckDB to quickly read and union multiple CSV files matching a pattern, automatically adding a filename column to track the source of each row. It normalizes column names and handles various CSV formats.
 
 ## Installation
 
@@ -18,7 +18,7 @@ devtools::install_github("RayTellis/readcsvs")
 
 ## Usage
 ```r
-readcsvs(
+read_csvs(
   pattern = "*",
   quote = "\"",
   delim = ",",
@@ -52,28 +52,28 @@ readcsvs(
 
 ### Read all CSV files in the current directory
 ```r
-data <- readcsvs()
+data <- read_csvs()
 ```
 
 ### Read files matching a specific pattern
 ```r
 # Read all files starting with "sales_"
-sales_data <- readcsvs(pattern = "sales_*")
+sales_data <- read_csvs(pattern = "sales_*")
 
 # Read a single file
-customer_data <- readcsvs(pattern = "customers_2024")
+customer_data <- read_csvs(pattern = "customers_2024")
 ```
 
 ### Handle different CSV formats
 ```r
 # Tab-delimited files
-tsv_data <- readcsvs(pattern = "data_*", delim = "\t")
+tsv_data <- read_csvs(pattern = "data_*", delim = "\t")
 
 # Files with single quotes
-quoted_data <- readcsvs(pattern = "export_*", quote = "'")
+quoted_data <- read_csvs(pattern = "export_*", quote = "'")
 
 # Skip header rows
-no_header_data <- readcsvs(pattern = "raw_*", skip = 2, header = FALSE)
+no_header_data <- read_csvs(pattern = "raw_*", skip = 2, header = FALSE)
 ```
 
 ## Output
